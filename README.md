@@ -1,48 +1,54 @@
-# Verdanza — 3-Tier Next.js Project & Task Dashboard
+# 🚀 Simple Next.js Full-Stack App | DevOps CI/CD Pipeline
 
-A clean **White & Emerald Green** full-stack **3-Tier Application** built with **Next.js (App Router)**, **Tailwind CSS**, **Prisma ORM**, and **SQLite** for hands-on practice.
+A complete three-tier web architecture demonstrating modern full-stack development and automated Continuous Integration/Continuous Deployment (CI/CD). 
 
----
+This project was built from scratch to showcase the seamless integration of a Next.js frontend, a PostgreSQL database, and a fully containerized deployment pipeline running on an Ubuntu VPS.
 
-## 🏗️ 3-Tier Architecture Overview
+## 🏗️ Architecture & Tech Stack
 
-1. **Tier 1: Presentation Layer (Frontend UI)**
-   - [`src/app/page.tsx`](./src/app/page.tsx) — Main dashboard view & state orchestration.
-   - [`src/components/StatsBanner.tsx`](./src/components/StatsBanner.tsx) — Real-time KPI summary cards.
-   - [`src/components/ProjectSidebar.tsx`](./src/components/ProjectSidebar.tsx) — Workspace switcher & project creation.
-   - [`src/components/TaskBoard.tsx`](./src/components/TaskBoard.tsx) — Kanban board & table list view with search and priority filters.
-   - [`src/components/ArchitectureDrawer.tsx`](./src/components/ArchitectureDrawer.tsx) — Live 3-Tier request tracer showing every API call flowing through the tiers.
+### Full-Stack Development
+* **Frontend:** Next.js (App Router), React, TypeScript, Tailwind CSS
+* **Backend:** Next.js API Routes, Node.js
+* **Database & ORM:** PostgreSQL (`postgres:16-alpine`), Prisma ORM
 
-2. **Tier 2: Application / Business Logic Layer (API Routes + Services)**
-   - **Services (Business Rules & Validation):**
-     - [`src/services/projectService.ts`](./src/services/projectService.ts)
-     - [`src/services/taskService.ts`](./src/services/taskService.ts)
-   - **API Controllers (HTTP Endpoints):**
-     - `GET / POST` [`src/app/api/projects/route.ts`](./src/app/api/projects/route.ts)
-     - `DELETE` [`src/app/api/projects/[id]/route.ts`](./src/app/api/projects/[id]/route.ts)
-     - `GET / POST` [`src/app/api/tasks/route.ts`](./src/app/api/tasks/route.ts)
-     - `PATCH / DELETE` [`src/app/api/tasks/[id]/route.ts`](./src/app/api/tasks/[id]/route.ts)
-     - `GET` [`src/app/api/stats/route.ts`](./src/app/api/stats/route.ts)
-
-3. **Tier 3: Data Access & Database Layer (Prisma + SQLite)**
-   - [`prisma/schema.prisma`](./prisma/schema.prisma) — Relational schema (`Project` 1:N `Task`).
-   - [`src/lib/db.ts`](./src/lib/db.ts) — Prisma Client singleton connection.
-   - [`prisma/seed.ts`](./prisma/seed.ts) — Initial sample projects and tasks.
+### DevOps & Infrastructure
+* **Containerization:** Docker, Multi-stage `Dockerfile`
+* **Networking:** Secure, isolated private Docker networks (`next-net`)
+* **CI/CD Pipeline:** GitHub Actions (Continuous Integration), Watchtower (Continuous Deployment)
+* **Hosting:** Remote Ubuntu Linux VPS
+* **Registry:** Docker Hub (`sajithlakmal2004`)
 
 ---
 
-## 🚀 Quick Commands
+## ⚙️ How the CI/CD Pipeline Works
 
-```bash
-# Start development server
-npm run dev
+This repository is configured for completely automated, zero-touch deployments.
 
-# Push schema changes to SQLite
-npm run db:push
+1. **Commit & Push:** Developer pushes frontend or backend code changes to the `main` branch on GitHub.
+2. **Automated Build (CI):** GitHub Actions triggers automatically, building a highly optimized Next.js Docker image using a custom multi-stage `Dockerfile`.
+3. **Registry Push:** The completed image is securely pushed to Docker Hub (`sajithlakmal2004/simple-next-app:latest`).
+4. **Automated Deployment (CD):** Watchtower, running continuously on the production Ubuntu VPS, detects the new image, pulls it, gracefully shuts down the old container, and spins up the new one—all within 60 seconds.
 
-# Re-seed sample data
-npm run db:seed
+---
 
-# Open Prisma Studio (Visual Database Browser)
-npm run db:studio
-```
+## 🔒 Security & Optimization Highlights
+
+* **Database Isolation:** The PostgreSQL database is attached exclusively to a custom Docker bridge network. It does not expose port 5432 to the public internet, preventing external intrusion.
+* **Multi-Stage Builds:** The Dockerfile is optimized to discard dev-dependencies and source code, resulting in a lightweight, production-ready container that boots instantly.
+* **Secret Management:** All database URLs and Docker registry credentials are fundamentally isolated using GitHub Actions Secrets and environment variables.
+
+---
+
+## 👨‍💻 About the Developer
+
+**Sajith Lakmal**  
+*Information Technology Undergraduate at University of Moratuwa*  
+Passionate about designing resilient database architectures, provisioning Linux infrastructure, and building scalable full-stack web applications. 
+
+* **Focus Areas:** DevOps Engineering, Linux System Administration, Docker Containerization, Cloud Security, and Full-Stack Development (Next.js/React/Go).
+* **Let's Connect:** WhatsApp - 0743341562
+
+## 🗺️ System Architecture
+
+![Architecture Diagram](./assets/architecture-diagram.png)
+
