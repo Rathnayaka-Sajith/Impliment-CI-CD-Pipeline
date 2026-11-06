@@ -207,7 +207,7 @@ export default function DashboardPage() {
             <div>
               <div className="flex items-center gap-2">
                 <h1 className="text-lg font-bold tracking-tight text-slate-900">
-                  Verdanza
+                  Testing 3-Tier Architecture
                 </h1>
                 <span className="text-[11px] font-semibold px-2 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200">
                   3-Tier Practice App
