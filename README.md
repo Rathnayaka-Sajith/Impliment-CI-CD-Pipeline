@@ -1,15 +1,16 @@
-# 🚀 Simple Next.js Full-Stack App | DevOps CI/CD Pipeline
+![System Architecture](./assets/architecture-diagram.png)
+# Simple Next.js Full-Stack App | DevOps CI/CD Pipeline
 
 A complete three-tier web architecture demonstrating modern full-stack development and automated Continuous Integration/Continuous Deployment (CI/CD). 
 
 This project was built from scratch to showcase the seamless integration of a Next.js frontend, a PostgreSQL database, and a fully containerized deployment pipeline running on an Ubuntu VPS.
 
-## 🏗️ Architecture & Tech Stack
+##  Architecture & Tech Stack
 
 ### Full-Stack Development
-* **Frontend:** Next.js (App Router), React, TypeScript, Tailwind CSS
+* **Frontend:** Next.js, React, TypeScript, Tailwind CSS
 * **Backend:** Next.js API Routes, Node.js
-* **Database & ORM:** PostgreSQL (`postgres:16-alpine`), Prisma ORM
+* **Database & ORM:** PostgreSQL, Prisma ORM
 
 ### DevOps & Infrastructure
 * **Containerization:** Docker, Multi-stage `Dockerfile`
@@ -42,13 +43,14 @@ This repository is configured for completely automated, zero-touch deployments.
 ## 👨‍💻 About the Developer
 
 **Sajith Lakmal**  
-*Information Technology Undergraduate at University of Moratuwa*  
+*BSc (Hons) IT Undergraduate at University of Moratuwa*  
 Passionate about designing resilient database architectures, provisioning Linux infrastructure, and building scalable full-stack web applications. 
 
 * **Focus Areas:** DevOps Engineering, Linux System Administration, Docker Containerization, Cloud Security, and Full-Stack Development (Next.js/React/Go).
 * **Let's Connect:** WhatsApp - 0743341562
+* **Contact me on Linkdin:** https://www.linkedin.com/in/sajith-lakmal-aaa15b355?utm_source=share_via&utm_content=profile&utm_medium=member_ios
 
 ## 🗺️ System Architecture
 
-![System Architecture](./assets/architecture-diagram.png)
+
 
