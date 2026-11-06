@@ -21,7 +21,7 @@ This project was built from scratch to showcase the seamless integration of a Ne
 
 ---
 
-## ⚙️ How the CI/CD Pipeline Works
+##  How the CI/CD Pipeline Works
 
 This repository is configured for completely automated, zero-touch deployments.
 
@@ -32,7 +32,7 @@ This repository is configured for completely automated, zero-touch deployments.
 
 ---
 
-## 🔒 Security & Optimization Highlights
+##  Security & Optimization Highlights
 
 * **Database Isolation:** The PostgreSQL database is attached exclusively to a custom Docker bridge network. It does not expose port 5432 to the public internet, preventing external intrusion.
 * **Multi-Stage Builds:** The Dockerfile is optimized to discard dev-dependencies and source code, resulting in a lightweight, production-ready container that boots instantly.
@@ -40,7 +40,7 @@ This repository is configured for completely automated, zero-touch deployments.
 
 ---
 
-## 👨‍💻 About the Developer
+##  About the Developer
 
 **Sajith Lakmal**  
 *BSc (Hons) IT Undergraduate at University of Moratuwa*  
