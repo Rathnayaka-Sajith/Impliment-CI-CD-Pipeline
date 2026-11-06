@@ -50,5 +50,5 @@ Passionate about designing resilient database architectures, provisioning Linux 
 
 ## 🗺️ System Architecture
 
-![Architecture Diagram](./assets/architecture-diagram.png)
+![System Architecture](./assets/architecture-diagram.png)
 
