@@ -1,0 +1,35 @@
+// ============================================================================
+// TIER 3: DATABASE SCHEMA (Data Layer - SQLite via Prisma)
+// ============================================================================
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Project {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  color       String   @default("#10b981") // Emerald green default
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  tasks       Task[]
+}
+
+model Task {
+  id          String    @id @default(cuid())
+  title       String
+  description String?
+  status      String    @default("TODO")   // "TODO" | "IN_PROGRESS" | "COMPLETED"
+  priority    String    @default("MEDIUM") // "LOW" | "MEDIUM" | "HIGH"
+  dueDate     DateTime?
+  projectId   String
+  project     Project   @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
